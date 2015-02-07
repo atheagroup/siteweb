@@ -1,0 +1,68 @@
+{% extends "::layout/baseAdmin.html.twig" %}
+
+{% block body %}
+    <!-- Start .content-wrapper -->
+    <div class="content-wrapper">
+        {% block infosBar %}
+            {% include "SiteFrontendBundle:Admin:includes/barinfosArticles.html.twig" %}
+        {% endblock %}
+
+    </div>
+
+    <div class="clearfix">
+
+        <h1>Article creation</h1>
+        <form action="{{ path('adminArticles_update',{'id' : entity.id }) }}" method="post" {{ form_enctype(edit_form) }} class="form-horizontal group-border hover-stripped" role="form">
+            <div class="form-group">
+                <div class="col-lg-12 col-md-12">
+                    {{ form_label(edit_form.titre,"Titre de l'offre") }}
+                    {{ form_widget(edit_form.titre) }}<br/>
+
+                    {{ form_label(edit_form.nomEntreprise) }}
+                    {{ form_widget(edit_form.nomEntreprise) }}<br/>
+
+                    {{ form_label(edit_form.typeOffre) }}
+                    {{ form_widget(edit_form.typeOffre) }}<br/>
+
+                    {{ form_label(edit_form.ville) }}
+                    {{ form_widget(edit_form.ville) }}<br/>
+
+                    {{ form_label(edit_form.dateLimite) }}
+                    {{ form_widget(edit_form.dateLimite) }}<br/>
+
+                    {{ form_label(edit_form.metiers) }}
+                    {{ form_widget(edit_form.metiers) }}<br/>
+
+                    {{ form_label(edit_form.niveauEtudes) }}
+                    {{ form_widget(edit_form.niveauEtudes) }}<br/>
+
+                    {{ form_label(edit_form.experiences) }}
+                    {{ form_widget(edit_form.experiences) }}<br/>
+
+                    {{ form_label(edit_form.contenu) }}
+                    {{ form_widget(edit_form.contenu) }}<br/><br/>
+
+                    {{ form_label(edit_form.logo) }}
+                    {{ form_widget(edit_form.logo) }}<br/><br/>
+
+                    {{ form_rest(edit_form) }}
+                </div>
+            </div>
+        </form>
+
+    </div>
+{% endblock %}
+{% block javascripts %}
+    {{ parent() }}
+    <script src="{{ asset('assets/js/pages/forms.js') }}"></script>
+{% endblock %}
+
+
+
+
+
+
+
+
+
+

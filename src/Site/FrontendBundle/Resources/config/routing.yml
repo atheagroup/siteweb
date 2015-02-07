@@ -1,0 +1,29 @@
+#Routing Frontend
+site_frontend_routing:
+    resource: "@SiteFrontendBundle/Resources/config/routing/routingFrontend.yml"
+    prefix:   /
+
+#Routing Backend
+site_frontend_adminPartenaires:
+    resource: "@SiteFrontendBundle/Resources/config/routing/routingAdminPartenaires.yml"
+    prefix:   /admin/partenaires
+
+site_frontend_adminClients:
+    resource: "@SiteFrontendBundle/Resources/config/routing/routingAdminClients.yml"
+    prefix:   /admin/clients
+
+site_frontend_adminVilles:
+    resource: "@SiteFrontendBundle/Resources/config/routing/routingAdminVilles.yml"
+    prefix:   /admin/villes
+
+site_frontend_adminMetiers:
+    resource: "@SiteFrontendBundle/Resources/config/routing/routingAdminMetiers.yml"
+    prefix:   /admin/metiers
+
+site_frontend_adminArticles:
+    resource: "@SiteFrontendBundle/Resources/config/routing/routingAdminArticle.yml"
+    prefix:   /admin/articles
+
+site_frontend_galerieAdmin:
+    resource: "@SiteFrontendBundle/Resources/config/routing/routingAdminGalerie.yml"
+    prefix:   /admin/galerie

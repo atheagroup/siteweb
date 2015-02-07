@@ -1,0 +1,57 @@
+{% extends "::layout/base.html.twig" %}
+
+{% block titre %} Offres d'emploi et de stage - {{ parent() }}{% endblock %}
+
+{% block body %}
+            <h3 class="title">OFFRES D'EMPLOI ET DE STAGE</h3>
+    {% if emplois|length !=0 %}
+        {% for emploi in emplois %}
+            <div class="listing-item">
+                <div class="row">
+                    <div class="col-md-7">
+                        <div class="featured-item">
+                            <span class="label label-success price">Date de publication:</span> {{ emploi.creationDate | date("d/m/Y")}}
+                            <hr/>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <a href="{{ path('site_frontend_emploi_details',{'title':emploi.titre,'id': emploi.id,'_format': 'html'}) }}"><img src="{{ asset(emploi.logo.AssetPath) }}" alt="{{ emploi.titre }}" title="{{ emploi.titre }}" class="img pull-left" style="height: 100px;width: 150px;"></a>
+                                    <br/>
+                                    <span class="label label-info price">Like</span>
+                                    <span class="label label-info price">Partager</span>
+                                </div>
+                                <div class="col-md-8">
+                                    <h5><a href="{{ path('site_frontend_emploi_details',{'title':emploi.titre,'id': emploi.id,'_format': 'html'}) }}">{{ emploi.titre }}</a></h5>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-5">
+                        <div class="other_info">
+                            <span class="label label-danger price">Date limite:</span> {{ emploi.dateLimite | date("d/m/Y")}}
+                            <hr/>
+                            <p><strong>Type d'offre :</strong> {{ emploi.typeOffre }}<br/>
+                                <strong>Lieu:</strong> {{ emploi.ville.nom }}<br/>
+                            <div class="btn-group">
+                                <div class='span2'>
+                                    <a href="{{ path('site_frontend_emploi_details',{'title':emploi.titre,'id': emploi.id,'_format': 'html'}) }}" class='btn btn-mini btn-info'>Consulter l'offre</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        {% endfor %}
+       <center>
+           <div class="navigation">
+               {{ knp_pagination_render(emplois) }}
+           </div>
+       </center>
+    {% else %}
+        <div class="listing-item">Aucune offre disponible pour le moment !</div>
+    {% endif %}
+
+
+
+{% endblock %}

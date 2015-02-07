@@ -1,0 +1,30 @@
+adminGalerie:
+    path:     /
+    defaults: { _controller: "SiteFrontendBundle:Galerie:index" }
+
+adminGalerie_show:
+    path:     /{id}/show
+    defaults: { _controller: "SiteFrontendBundle:Galerie:show" }
+
+adminGalerie_new:
+    path:     /new
+    defaults: { _controller: "SiteFrontendBundle:Galerie:new" }
+
+adminGalerie_create:
+    path:     /create
+    defaults: { _controller: "SiteFrontendBundle:Galerie:create" }
+    requirements: { _method: post }
+
+adminGalerie_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "SiteFrontendBundle:Galerie:edit" }
+
+adminGalerie_update:
+    path:     /{id}/update
+    defaults: { _controller: "SiteFrontendBundle:Galerie:update" }
+    requirements: { _method: post|put }
+
+adminGalerie_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "SiteFrontendBundle:Galerie:delete" }
+    requirements: { _method: post|delete }

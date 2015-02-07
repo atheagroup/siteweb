@@ -1,0 +1,43 @@
+{% extends "::layout/baseAdmin.html.twig" %}
+
+{% block body %}
+    <!-- Start .content-wrapper -->
+    <div class="content-wrapper">
+        {% block infosBar %}
+            {% include "SiteFrontendBundle:Admin:includes/barinfosVilles.html.twig" %}
+        {% endblock %}
+
+    </div>
+
+    <div class="clearfix">
+
+        <div class="panel panel-default plain toggle panelClose panelRefresh">
+            <!-- Start .panel -->
+            <div class="panel-heading white-bg">
+                <h4 class="panel-title">Data table</h4>
+            </div>
+            <div class="panel-body">
+                <table class="table display" id="datatable">
+                    <thead>
+                    <tr>
+                        <th>Nom</th>
+                        <th>Actions</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for entity in entities %}
+                        <tr>
+                            <td>{{ entity.nom }}</td>
+                            <td>
+                                <a id="clear-localstorage" class="btn tip" title="Voir" href="{{ path('adminVilles_show', { 'id': entity.id }) }}"><i class="im-eye2 color-green s24"></i></a>
+                                <a id="clear-localstorage" class="btn tip" title="Modifier" href="{{ path('adminVilles_edit', { 'id': entity.id }) }}"><i class="fa-edit-sign color-red s24"></i></a>
+
+                            </td>
+                        </tr>
+                    {% endfor %}
+                    </tfoot>
+                </table>
+            </div>
+        </div>
+    </div>
+{% endblock %}

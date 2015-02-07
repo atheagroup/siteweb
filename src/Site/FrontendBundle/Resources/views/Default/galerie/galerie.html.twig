@@ -1,0 +1,29 @@
+{% extends "::layout/base.html.twig" %}
+
+{% block titre %} Galerie Images et Vidéo - {{ parent() }}{% endblock %}
+
+{% block body %}
+            <h3 class="title"><span class="pull-left">Galerie Images et Vidéos</span><span class="pull-right"><a href=""></a></span></h3>
+            <div class="row">
+            <div class="product_listing">
+            <div class="col-md-6 col-sm-6">
+                <div class="item">
+                    <a href="{{ path('site_frontend_galerieImages') }}"><img class="img" src="{{ asset('img/galerie/images.jpg') }}" alt="Images - Athea Group" title="Images - Athea Group"></a>
+                    <a href="{{ path('site_frontend_galerieImages') }}" class="title">Images</a> <span class="label"></span><br/>
+                    <p></p>
+                    <a href="#" class="subinfo"></a>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-sm-6">
+                <div class="item">
+                    <a href="http://adminpanel.atheagroup.ci/index.php?page=videos" target="_blank"><img class="img" src="{{ asset('img/galerie/videos.jpg') }}" alt="Vidés - Athea Group" title="Vidéos - Athea Group"></a>
+                    <a href="http://adminpanel.atheagroup.ci/index.php?page=videos" class="title">Vidéos</a> <span class="label"></span><br/>
+                    <p></p>
+                    <a href="#" class="subinfo"></a>
+                </div>
+            </div>
+            </div>
+            </div>
+
+{% endblock %}

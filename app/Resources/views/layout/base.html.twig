@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        {% block meta %}
+            <meta charset="UTF-8" />
+            <title>{% block titre %} Athea Group {% endblock %}</title>
+            <meta name="google-translate-customization" content="b2d361d90cb4d265-82bb0d37903fe20c-g3735cfed9bfd3ae1-d"></meta>
+            <meta name="google-site-verification" content="xDYABSbXMislB71MV8OcwSLqvc5GIjoQk2Stq3XY7tM" />
+            <meta name="keywords" content="{% block motsCles %}{{ motsCles }}{% endblock %}" />
+            <meta name="description" content="{% block description %}{% endblock %}" />
+            <meta name="robots" content="index, follow">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        {% endblock %}
+        {% block stylesheets %}
+            <!-- CSS styles -->
+            <link rel='stylesheet' type='text/css' href="{{ asset('css/bootstrap.min.css') }}" />
+            <link rel="stylesheet" href="{{ asset('css/bootstrap-theme.min.css') }}" />
+            <link rel='stylesheet' type='text/css' href="{{ asset('css/main.css')  }}" />
+            {# My own Style #}
+            <link rel='stylesheet' type='text/css' href="{{ asset('css/styles.css')  }}" />
+            <link rel='stylesheet' type='text/css' href="{{ asset('css/owl.carousel.css') }}" />
+            <link rel='stylesheet' type='text/css' href="{{ asset('css/owl.theme.css') }}" />
+            <link rel="stylesheet" href="{{ asset('css/jquery.fancybox.css') }}" />
+            <!-- Start WOWSlider.com HEAD section -->
+            <link rel="stylesheet" type="text/css" href="{{ asset('engine1/style.css') }}" />
+            <!-- End WOWSlider.com HEAD section -->
+            <link rel="icon" type="image/x-icon" href="{{ asset('favicon.jpg') }}" />
+        {% endblock %}
+        {% block js %}
+        <!-- JS Libs -->
+            <script src="{{ asset('js/jquery.js') }}"></script>
+            <script src="{{ asset('js/bootstrap.min.js') }}"></script>
+            <script src="{{ asset('js/respond.min.js') }}"></script>
+            <script src="{{ asset('js/owl.carousel.min.js') }}"></script>
+        {% endblock %}
+
+    </head>
+    <body>
+    {# header #}
+    {% include "::modules/headers.html.twig" %}
+    {# header#}
+    <div class="container">
+    <div class="row">
+        <div class="col-md-9">
+            {% block slide %}{% endblock %}
+            <div class="main_content">
+              {% block body %}{% endblock %}
+            </div>
+        </div>
+    {# block right #}
+     {% render(controller("SiteFrontendBundle:Default:InfosBlogLeft")) %}
+    {# block right #}
+
+        </div>
+        </div>
+        {# Footer #}
+           {% include "::modules/footer.html.twig" %}
+        {# footer #}
+
+        {% block javascripts %}
+                <script>
+                    $('.carousel').carousel({
+                        interval: 2000
+                    })
+
+                    $("#owl-carousel").owlCarousel({
+                        autoPlay: 3000, //Set AutoPlay to 3 seconds
+                        items : 4,
+                        pagination : true
+                    });
+
+                </script>
+                <script src="{{ asset('js/jquery.fancybox.js') }}"></script>
+                <script>
+                    $(function () {
+                        $('#myTab a:first').tab('show');
+                        $('#myTab a').click(function (e) {
+                            e.preventDefault();
+                            $(this).tab('show');
+                        })
+                    })
+                    $(document).ready(function() {
+                        $('.thumbnail').fancybox({
+                            openEffect  : 'none',
+                            closeEffect : 'none'
+                        });
+
+                        $('.carousel').carousel({
+                            interval: false
+                        });
+                    });
+                </script>
+                <script type="text/javascript" src="{{ asset('engine1/wowslider.js') }}"></script>
+                <script type="text/javascript" src="{{ asset('engine1/script.js') }}"></script>
+        {% endblock %}
+    </body>
+</html>

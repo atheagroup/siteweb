@@ -1,0 +1,81 @@
+{% extends "::layout/baseAdmin.html.twig" %}
+
+{% block body %}
+<!-- Start .content-wrapper -->
+<div class="content-wrapper">
+    {% block infosBar %}
+        {% include "SiteFrontendBundle:Admin:includes/barinfosClients.html.twig" %}
+    {% endblock %}
+
+</div>
+
+<div class="clearfix">
+
+    <h1></h1>
+
+    <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+            <!-- col-lg-4 start here -->
+            <div class="panel panel-default plain profile-widget">
+                <!-- Start .panel -->
+                <div class="panel-heading white-bg pl0 pr0">
+                </div>
+                <div class="panel-body">
+                    <div class="col-lg-4 col-md-4 col-sm-12">
+                        <div class="profile-avatar">
+                            <img class="img-responsive" src="{{ asset(entity.logo.AssetPath) }}" alt="@roybarberuk">
+                        </div>
+                    </div>
+                    <div class="col-lg-8 col-md-8 col-sm-12">
+                        <div class="profile-name">
+                            Type d'offre <span class="label label-success">{{ entity.typeOffre }}</span>
+                        </div>
+                        <div class="profile-quote">
+                            Titre: <p>{{ entity.titre }}</p>
+                        </div>
+                        <div class="profile-stats-info">
+                            Entreprise: {{ entity.nomEntreprise }}
+                        </div>
+                    </div>
+                </div>
+                <div class="panel-footer white-bg">
+                    <ul class="profile-info">
+                        <li><i class="ec-mobile"></i>Expériences: {{ entity.experiences }}</li>
+                        <li><i class="ec-location"></i> Ville: {{ entity.ville.nom }}</li>
+                    <li><i class="ec-mail"></i> Types de metiers: {% for metiers in entity.metiers  %}
+                                                                      {{ metiers.nom }} {% if not loop.last %} , {% endif %}
+                                                                  {% endfor %}
+                    </li>
+                        <li><i class="im-office"></i>Niveaux d'Etudes: {% for niveux in entity.niveauEtudes %} {{ niveux.nom }}{% if not loop.last %} , {% endif %}{% endfor %}</li>
+                        <li><i class="fa-bitbucket"></i>Date limite: {{ entity.dateLimite|date('d-M-Y') }}</li>
+                        <li><i class="fa-bitbucket"></i>Date d'édition de l'offre: {{ entity.creationDate|date('Y-m-d H:i:s') }}</li>
+                    </ul>
+                </div>
+            </div>
+            <!-- End .panel -->
+        </div>
+        <!-- col-lg-4 end here -->
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+            <!-- col-lg-4 start here -->
+            <div class="panel panel-default plain">
+                <!-- Start .panel -->
+                <div class="panel-heading white-bg">
+                    <h4 class="panel-title"><i class="ec-user"></i>Description de l'offre</h4>
+                </div>
+                <div class="panel-body">
+                    {{ entity.contenu|raw }}
+                </div>
+            </div>
+            <!-- End .panel -->
+        </div>
+        <!-- col-lg-4 end here -->
+    </div>
+
+    <div class="row-fluid">
+        <div class="col-lg-4 col-md-4 col-sm-4 ">{{ form(delete_form) }}</div>
+        <div class="col-lg-4 col-md-4 col-sm-4"><a href="{{ path('adminArticles') }}" class="btn btn-xs btn-info">Retour à la liste</a></div>
+        <div class="col-lg-4 col-md-4 col-sm-4"> <a href="{{ path('adminArticles_edit', { 'id': entity.id }) }}" class="btn btn-xs btn-btn btn-xs btn-brown">Editer</a></div>
+    </div>
+</ul>
+</div>
+{% endblock %}

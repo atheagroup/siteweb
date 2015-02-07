@@ -1,0 +1,69 @@
+{% extends "::layout/base.html.twig" %}
+
+{% block titre %} Nous contacter {{ parent() }} {% endblock %}
+
+{% block body %}
+            <h3 class="title"><span class="pull-left">CONTACTEZ NOUS</span></h3>
+
+            {% for flasMessage in app.session.FlashBag.get("infos") %}
+                <div class="alert alert-success">{{ flasMessage }}</div>
+            {% endfor %}
+
+            <div class="row">
+                <div class="col-md-12">
+                    <iframe src="http://www.ma-carte-geographique.com/my-google-maps.php?SID=1420206061-PaSfb" width="812" height="300" frameborder="0" hspace="0" vspace="0" marginheight="0" marginwidth="0" scrolling="no"></iframe>
+                </div>
+            </div>
+            <hr/>
+            <div class="row">
+                <div class="col-md-5">
+                    <h4>NOS CONTACTS</h4>
+                    <p><strong>Téléphone:</strong>&nbsp; (+225) 22 50 16 53 <br/>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(+225) 08 06 76 41  <br/>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(+225) 08 08 89 91<br>
+                        <strong>Adresse Postale :</strong>&nbsp;19 BP 504 Abidjan 19<br>
+                        <strong>Email:</strong>&nbsp;info@atheagroup.ci <br/>
+                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;atheagroup@gmail.com
+                        <br/>
+                        <strong>Siège:</strong>&nbsp;Cocody Angré 8ème tranche,Carrefour
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Prière,opposé à FRED et POPEE,
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Immeuble Soumana Sylla 3e Etage C5,
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Abidjan, Cote d'Ivoire.
+                    </p>
+                    <br/>
+                    </p>
+                </div>
+                <div class="col-md-7">
+                    <h4>FORMULAIRE DE CONTACT</h4>
+                    <p>Pour toutes vos préocupations nous sommes à votre disposition.</p>
+                    <form method="post" action="{{ path('site_contact_us_homepage') }}">
+
+                         {{ form_label(form.nom,"Nom de l'Entreprise / Particulier:") }}
+                         {{ form_widget(form.nom) }}
+                         {{ form_errors(form.nom) }}
+
+                         {{ form_label(form.telephone,"Téléphone:") }}
+                         {{ form_widget(form.telephone) }}
+                         {{ form_errors(form.telephone) }}
+
+                         {{ form_label(form.email,"Adresse email:") }}
+                         {{ form_widget(form.email) }}
+                         {{ form_errors(form.email) }}
+
+                         {{ form_label(form.suijet,"Sujet:") }}
+                         {{ form_widget(form.suijet) }}
+                         {{ form_errors(form.suijet) }}
+
+                         {{ form_label(form.message,"Message:") }}
+                         {{ form_widget(form.message) }}
+                         {{ form_errors(form.message) }}
+
+
+                         {{ form_rest(form) }}<br>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-primary">Envoyer votre message</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+{% endblock %}

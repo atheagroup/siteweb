@@ -1,0 +1,3 @@
+site_contact_us_homepage:
+    path:     /contact-us
+    defaults: { _controller: SiteContactUSBundle:Default:contact }

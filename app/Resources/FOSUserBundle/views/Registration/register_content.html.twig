@@ -1,0 +1,46 @@
+{% trans_default_domain 'FOSUserBundle' %}
+<h3 class="title"><span class="pull-left">Connexion</span></h3>
+<div class="row">
+    <div class="col-md-6">
+        <h4></h4>
+        <p></p>
+        <form action="{{ path('fos_user_registration_register') }}" {{ form_enctype(form) }} method="POST" class="fos_user_registration_register">
+            <div class="form-group">
+                {{ form_label(form.username,"Nom d'utilisateur :") }}
+                {{ form_widget(form.username) }}
+                {{ form_errors(form.username) }}
+
+                {{ form_label(form.email,"Adresse e-mail :") }}
+                {{ form_widget(form.email) }}
+                {{ form_errors(form.email) }}
+
+                {{ form_widget(form.plainPassword) }}
+                {{ form_errors(form.plainPassword) }}
+                <br/>
+            <label>Recevoir des offres de :</label>
+            <div class ="row-fluid">
+                <div class="col-lg-6 col-md-6">
+                    {{ form_label(form.offreAg,"ATHEA GROUP") }}
+                    {{ form_widget(form.offreAg) }}
+                    {{ form_errors(form.offreAg) }}
+                </div>
+                <div class="col-lg-6 col-md-6">
+                    {{ form_label(form.offrePartenaire,"Offres Partenaires") }}
+                    {{ form_widget(form.offrePartenaire) }}
+                    {{ form_errors(form.offrePartenaire) }}
+                </div>
+            </div>
+                <br/><br/><br/><br/>
+                {{  form_rest(form) }}
+            </div>
+            <div class="form-group">
+                <input type="submit" class="btn btn-primary" value="{{ 'registration.submit'|trans }}" />
+            </div>
+        </form>
+    </div>
+    <div class="col-md-6">
+        <h4></h4>
+        <p>Vous devez vous inscrire afin d'utiliser les services d'Athea Group</p>
+
+    </div>
+</div>

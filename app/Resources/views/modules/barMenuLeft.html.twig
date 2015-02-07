@@ -1,0 +1,29 @@
+<div id="sidebar">
+    <!-- Start .sidebar-inner -->
+    <div class="sidebar-inner">
+        <!-- Start #sideNav -->
+        <ul id="sideNav" class="nav nav-pills nav-stacked">
+            <li class="top-search">
+                <form>
+                    <input type="text" name="search" placeholder="Search ...">
+                    <button type="submit"><i class="ec-search s20"></i>
+                    </button>
+                </form>
+            </li>
+            <li><a href="{{ path('admin_backend_homepage') }}">Tableau de bord <i class="im-screen"></i></a></li>
+            <li><a href="#">Offres <i class="st-lab"></i></a>
+                <ul class="nav sub">
+                    <li><a href="{{ path('adminArticles') }}"><i class="ec-archive"></i>Liste des offres</a></li>
+                    <li><a href="{{ path('adminVilles') }}"><i class="ec-archive"></i> Ajouter des villes</a></li>
+                    <li><a href="{{ path('adminMetiers') }}"><i class="br-eye"></i>Ajouter des métiers</a></li>
+                </ul>
+            </li>
+            <li><a href="{{ path('adminClient') }}"><i class="im-accessibility"></i>Clients</a></li>
+            <li><a href="{{ path('adminGalerie') }}"><i class="im-images"></i> Galeries</a></li>
+            <li><a href="{{ path('adminPartenaires') }}"><i class="ec-user"></i> Partenaires</a></li>
+            <li><a href="{{ path('user_utilisateurs_membres') }}"><i class="ec-users"></i> Membres</a></li>
+            <li><a href="http://atheagroup.us9.list-manage1.com/subscribe?u=7e7d5a1e8b3dadc0d66e97ee5&id=740df17e17&orig-lang=1" target="_blank"><i class="fa-envelope-alt"></i> Newsletters</a></li>
+      </ul>
+    </div>
+    <!-- End .sidebar-inner -->
+</div>

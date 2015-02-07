@@ -1,0 +1,7 @@
+user_utilisateurs_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: UserUtilisateursBundle:Default:index }
+
+user_utilisateurs_membres:
+    path:     /membres
+    defaults: { _controller: UserUtilisateursBundle:Membres:index }

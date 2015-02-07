@@ -1,0 +1,29 @@
+{% extends "::layout/baseAdmin.html.twig" %}
+
+{% block body %}
+    <!-- Start .content-wrapper -->
+    <div class="content-wrapper">
+        {% block infosBar %} {% include "SiteFrontendBundle:Admin:includes/barinfosMetiers.html.twig" %}{% endblock %}
+
+    </div>
+
+    <div class="clearfix">
+        <h1>Ajouter un métier</h1>
+
+        <form action="{{ path('adminMetiers_create') }}" method="post" {{ form_enctype(form) }} class="form-horizontal group-border hover-stripped" role="form">
+            <div class="form-group">
+                <div class="col-lg-4 col-md-4">
+                    {{ form_label(form.nom, "Nom") }}
+                    {{ form_widget(form.nom) }}
+                    <br/>
+                    <div class="row-fluid">
+                        <div class="col-lg-4 col-md-3">{{ form_rest(form) }}</div>
+                        <div class="col-lg-4 col-md-4"><a href="{{ path('adminMetiers') }}" class="btn btn-xs btn-info">Retour à la liste</a></div>
+                        <div class="col-lg-4 col-md-5">{{ form(form) }}</div>
+                    </div>
+                </div>
+            </div>
+        </form>
+
+    </div>
+{% endblock %}

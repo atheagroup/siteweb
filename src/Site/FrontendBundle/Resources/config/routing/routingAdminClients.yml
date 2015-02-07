@@ -1,0 +1,11 @@
+adminClient:
+    path:     /
+    defaults: { _controller: "SiteFrontendBundle:Clients:index" }
+
+adminClients_show:
+    path:     /{id}/show
+    defaults: { _controller: "SiteFrontendBundle:Clients:show" }
+
+adminClients_modificationNotif:
+    path:     /{id}/notification
+    defaults: { _controller: "SiteFrontendBundle:Clients:modificationNotif" }

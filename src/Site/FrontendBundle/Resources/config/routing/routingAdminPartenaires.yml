@@ -1,0 +1,30 @@
+adminPartenaires:
+    path:     /
+    defaults: { _controller: "SiteFrontendBundle:PartenairesAdmin:index" }
+
+adminPartenaires_show:
+    path:     /{id}/show
+    defaults: { _controller: "SiteFrontendBundle:PartenairesAdmin:show" }
+
+adminPartenaires_new:
+    path:     /new
+    defaults: { _controller: "SiteFrontendBundle:PartenairesAdmin:new" }
+
+adminPartenaires_create:
+    path:     /create
+    defaults: { _controller: "SiteFrontendBundle:PartenairesAdmin:create" }
+    requirements: { _method: post }
+
+adminPartenaires_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "SiteFrontendBundle:PartenairesAdmin:edit" }
+
+adminPartenaires_update:
+    path:     /{id}/update
+    defaults: { _controller: "SiteFrontendBundle:PartenairesAdmin:update" }
+    requirements: { _method: post|put }
+
+adminPartenaires_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "SiteFrontendBundle:PartenairesAdmin:delete" }
+    requirements: { _method: post|delete }

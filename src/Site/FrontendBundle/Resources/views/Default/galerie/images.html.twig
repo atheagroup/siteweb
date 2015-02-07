@@ -1,0 +1,39 @@
+{% extends "::layout/base.html.twig" %}
+
+{% block titre %} Images - Galerie -  {{ parent() }}{% endblock %}
+
+{% block description %}
+
+      La Télémétrie est une technique de gestion à distance. Elle prend en compte le contrôle d’accès, la vidéo surveillance, la mesure en consommation d'énergie et bien d'autres selon le domaine d'application( agricole, médecine, télécoms...)
+
+{% endblock %}
+
+{% block body %}
+
+    <h3 class="title"><span class="pull-left">Album image</span><span class="pull-right"><a href="{{ path('site_frontend_galerie') }}">Galerie</a></span></h3>
+          {% if images|length != 0 %}
+                <div class="row">
+
+                    <div class="col-md-12">
+                        <div class="row">
+                            <ul class="thumbnails small">
+                                {% for  image in images %}
+                                    <li class="col-md-4">
+                                        <a href="{{ asset(image.image.AssetPath) }}" class="thumbnail" data-fancybox-group="group1" title="{{ image.image.name }}"><img src="{{ asset(image.image.AssetPath) }}" alt="{{ image.image.name }}"></a>
+                                    </li>
+
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+              <hr>
+              <center>
+                  <div class="navigation">
+                      {{ knp_pagination_render(images) }}
+                  </div>
+              </center>
+          {% else %}
+              <div class="listing-item">Aucune image disponible !</div>
+          {% endif %}
+{% endblock %}

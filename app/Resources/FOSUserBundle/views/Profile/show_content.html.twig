@@ -1,0 +1,8 @@
+{% trans_default_domain 'FOSUserBundle' %}
+
+<div class="fos_user_user_show">
+    <h3 class="title"><span class="pull-left">Information du profile</span></h3>
+    {% for msg in app.session.flashbag.get("infos") %} <div class="alert alert-success" role="alert" style="margin-top: 20px;">{{ msg }}</div> {% endfor %}
+    <p class="">{{ 'profile.show.username'|trans }}: {{ user.username }}</p>
+    <p>{{ 'profile.show.email'|trans }}: {{ user.email }}</p>
+</div>

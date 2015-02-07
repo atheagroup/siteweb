@@ -1,0 +1,127 @@
+{% extends "::layout/base.html.twig" %}
+
+{% block titre %} Formations -  {{ parent() }}{% endblock %}
+
+
+{% block body %}
+            <h3 class="title"><span class="pull-left">Nos formations</span><span class="pull-right"><a href=""></a></span></h3>
+            <div class="row">
+             <div class="col-md-12">
+                 <ul class="nav nav-tabs" id="myTab">
+                     <li class="active"><a href="#eve">Programme EVE</a></li>
+                     <li><a href="#cv">Programme CV</a></li>
+                     <li><a href="#tps">Tests PSYCHOMETRIQUES</a></li>
+                 </ul>
+                 <div class="tab-content">
+                     <div class="tab-pane active" id="eve">
+                         <div class="blog-item">
+                             <a href="#"><h2>Programme Eveil Vie en Entreprise</h2></a>
+
+                             <p><img src="{{ asset('img/pg.jpg') }}" width="100%" alt="" /></p>
+                             <p class="lead">
+                                 <b>ATHEA GROUP</b> a décidé de mettre en œuvre le programme EVE pour aider les PME et
+                                 les jeunes à se découvrir pour mieux s’orienter dans la vie courante et professionnelle.</p>
+                             <h3>Pourquoi choisir ATHEA GROUP ?</h3>
+                             <p class="lead">
+                             <ul class="leadPerso" style="margin-left: 10px;">
+                                 <li>Des professionnels disponibles</li>
+                                 <li>Des concepts innovants attractifs pour une cible un objectif de
+                                     3 000 000 d’informations et au moins 1 000 ventes minimum</li>
+                                 <li>Avec des partenaires de référence pour des Tests fiables et mondialement reconnus</li>
+                                 <li>Un partenariat gagnant gagnant avec un accès aux ordinateurs et aux telephones portables aux
+                                     jeunes entrepreneurs</li>
+                                 <li>Mis en œuvre de l’éveil technologique avec notre programme étude it-academy.</li>
+                             </ul></p>
+
+                             <p class="text-left"><h2 style="color:red;">Inscrivez - vous</h2></p>
+
+                             <ul class="leadPerso" style="margin-left: 10px;">
+                                 <li>Ventes ,</li>
+                                 <li>Planification financière personnelle ,</li>
+                                 <li>Leadership, Management,</li>
+                                 <li>Télécoms, Informatique , Télémétrie , Vidéosurveillance, … </li>
+
+                             </ul><br /><br/>
+
+
+                             <div class="tag">
+                                 Pour plus de renseignement : <a href="{{ path('site_contact_us_homepage') }}"><span class="label label-success">Contactez nous >></span></a>
+                                 <a href="{{ path('site_frontend_inscription') }}"><span class="label label-info">Inscrivez vous >></span></a>
+                             </div>
+                         </div>
+                     </div>
+                     <div class="tab-pane" id="cv">
+                         <div class="blog-item">
+                             <a href="#"><h2>Programme Claire Vision</h2></a>
+
+                             <p><img src="{{ asset('img/pg.jpg') }}" width="100%" alt="" /></p>
+                             <p class="lead">
+                                 <b>ATHEA GROUP</b> met avotre disposition Claire Vision, Pour une formation en apprentissage dans le domaine de la vie pratique notamment en agriculture et en élevage.</p>
+                             <h3>Pourquoi choisir ATHEA GROUP ?</h3>
+                             <p class="lead">
+                             <ul class="leadPerso" style="margin-left: 10px;">
+                                 <li>Des professionnels disponibles</li>
+                                 <li>Des concepts innovants attractifs pour une cible un objectif de
+                                     3 000 000 d’informations et au moins 1 000 ventes minimum</li>
+                                 <li>Avec des partenaires de référence pour des Tests fiables et mondialement reconnus</li>
+                                 <li>Un partenariat gagnant gagnant avec un accès aux ordinateurs et aux telephones portables aux
+                                     jeunes entrepreneurs</li>
+                                 <li>Mis en œuvre de l’éveil technologique avec notre programme étude it-academy.</li>
+                             </ul></p>
+                             <p class="text-left"><h2 style="color:red;">Venez-vous inscrire</h2></p><br /><br/>
+                             <div class="tag">
+                                 Pour plus de renseignement : <a href="{{ path('site_contact_us_homepage') }}"><span class="label label-success">Contactez nous >></span></a>
+                                 <a href="{{ path('site_frontend_inscription') }}"><span class="label label-info">Inscrivez vous >></span></a>
+                             </div>
+                         </div>
+                     </div>
+                     <div class="tab-pane" id="tps">
+                         <div class="blog-item">
+                             <a href="#"><h2>Tests Psychotechniques</h2></a>
+
+                             <p><img src="{{ asset('img/test.jpg') }}" width="100%" alt="" /></p>
+                             <p class="lead">
+                                 Dans le cadre de ses activités, <b>ATHEA GROUP</b>, met à la disposition des individus et des gestionnaires de ressources humaines des tests psychométriques avec ses  partenaires éditeur expert en évaluation du capital humain.. afin de vous aider à connaître vos capacités, aptitudes et motivations pour mieux appréhender  votre métier actuel ou futur.
+                             </p>
+                             <h3>ELEVES ET ETUDIANTS</h3>
+                             <p class="leadPerso">
+                             <ul class="archive arrow" style="margin-left: 10px;">
+                                 <li>TEST D’ORIENTAION</li>
+                                 <p class="leadPerso">Aider nos enfants à découvrir leurs capacités et leurs caractères, c’est leur garantir les bases solides d’une réussite scolaire et d’une bonne orientation dans la vie active.</p>
+                                 <p class="leadPerso">Il s’agit à travers cette action de  déterminer leur filière d’étude ou leur(s) futur(s) métier(s) . Ces tests psychométriques sont élaborés à l’aide d’un questionnaire.</p>
+                                 <li>TEST ENTREPRENEUR</li>
+                                 <p class="leadPerso">Par ailleurs pour évaluer la capacité d’entreprenariat, des questions à travers un test peuvent définir le profil afin de mener son projet d’un point de vue de l’engagement personnel.</p>
+                             </ul></p>
+
+                             <h3>TRAVAILLEURS et GESTIONNAIRES EN RESSOURCES HUMAINES</h3>
+
+                             <h5>PROFIL DE COMPETENCES</h5>
+                             <p class="leadPerso">L’entreprise est un creuset de personnes et doit assurer sa rentabilité pour sa pérennité. Il est indispensable pour la personne ou le gestionnaire de ressources humaines d’avoir le profil le mieux adapté à la fonction. </p>
+                             <p class="leadPerso">Connaitre son profil de management et de vente est indispensable à travers les tests psychométriques à travers la:</p>
+
+                             <ul style="margin-left: 10px;">
+                                 <li>METHODE SIMPLE </li>
+                                 <p class="leadPerso">
+                                     Pour évaluer  son profil professionnel  à travers des tests d’aptitudes  ou tests de personnalités pour les gestionnaires de ressources humaines
+                                 </p>
+                                 <li>METHODE ARC EN CIEL </li>
+                                 <ol class="leadPerso">
+                                     <li>Mieux se connaître dans ses forces et faiblesses en tant que personne et dans sa fonction professionnelle.</li>
+                                     <li>Mieux se connaître dans ses forces et faiblesses en tant que personne et dans sa fonction professionnelle.</li>
+                                     <li>Mieux reconnaître les autres (collaborateurs, collègues, managers) dans leurs forces et faiblesses en tant que personne et dans leur fonction professionnelle.</li>
+                                     <li>Prendre en compte la situation.</li>
+                                 </ol>
+                             </ul>
+                             <p class="text-left"><h2 style="color:red;">Venez-vous inscrire</h2></p><br /><br/>
+                             <div class="tag">
+                                 Pour plus de renseignement : <a href="{{ path('site_contact_us_homepage') }}"><span class="label label-success">Contactez nous >></span></a>
+                                 <a href="{{ path('site_frontend_inscription') }}"><span class="label label-info">Inscrivez vous >></span></a>
+                             </div>
+                         </div>
+                     </div>
+
+                 </div>
+             </div>
+            </div>
+
+{% endblock %}

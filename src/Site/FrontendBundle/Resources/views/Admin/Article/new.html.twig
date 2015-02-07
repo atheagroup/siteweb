@@ -1,0 +1,65 @@
+{% extends "::layout/baseAdmin.html.twig" %}
+
+{% block body %}
+    <!-- Start .content-wrapper -->
+    <div class="content-wrapper">
+        {% block infosBar %}
+            {% include "SiteFrontendBundle:Admin:includes/barinfosArticles.html.twig" %}
+        {% endblock %}
+
+    </div>
+
+    <div class="clearfix">
+
+        <h1>Création d'une offre (Emploi ou Stage)</h1>
+        <form action="{{ path('adminArticles_create') }}" method="post" {{ form_enctype(form) }} class="form-horizontal group-border hover-stripped" role="form">
+        <div class="form-group">
+            <div class="col-lg-12 col-md-12">
+                {{ form_label(form.titre,"Titre de l'offre") }}
+                {{ form_widget(form.titre) }}<br/>
+
+                {{ form_label(form.nomEntreprise) }}
+                {{ form_widget(form.nomEntreprise) }}<br/>
+
+                {{ form_label(form.typeOffre) }}
+                {{ form_widget(form.typeOffre) }}<br/>
+
+                {{ form_label(form.ville) }}
+                {{ form_widget(form.ville) }}<br/>
+
+                {{ form_label(form.dateLimite) }}
+                {{ form_widget(form.dateLimite) }}<br/>
+
+                {{ form_label(form.metiers) }}
+                {{ form_widget(form.metiers) }}<br/>
+
+                {{ form_label(form.niveauEtudes) }}
+                {{ form_widget(form.niveauEtudes) }}<br/>
+
+                {{ form_label(form.experiences) }}
+                {{ form_widget(form.experiences) }}<br/>
+
+                {{ form_label(form.contenu) }}
+                {{ form_widget(form.contenu) }}<br/><br/>
+
+                {{ form_label(form.logo) }}
+                {{ form_widget(form.logo) }}<br/><br/>
+
+                {{ form_rest(form) }}
+            </div>
+        </div>
+        </form>
+    </div>
+{% endblock %}
+{% block javascripts %}
+    {{ parent() }}
+    <script src="{{ asset('assets/js/pages/forms.js') }}"></script>
+{% endblock %}
+
+
+
+
+
+
+
+

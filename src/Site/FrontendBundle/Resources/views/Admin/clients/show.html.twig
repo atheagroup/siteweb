@@ -1,0 +1,59 @@
+{% extends "::layout/baseAdmin.html.twig" %}
+
+{% block body %}
+    <!-- Start .content-wrapper -->
+    <div class="content-wrapper">
+        {% block infosBar %}
+            {% include "SiteFrontendBundle:Admin:includes/barinfosClients.html.twig" %}
+        {% endblock %}
+    </div>
+
+    <div class="clearfix">
+
+        <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                <!-- col-lg-4 start here -->
+                <div class="panel panel-default plain profile-widget">
+                    <div class="panel-body">
+                        <div class="col-lg-4 col-md-4 col-sm-12">
+
+                        </div>
+                        <div class="col-lg-8 col-md-8 col-sm-12">
+
+                               INFORMATION SUR LE CLIENT
+                        </div>
+                    </div>
+                    <div class="panel-footer white-bg">
+                        <ul class="profile-info">
+                            <li><i class="ec-mobile"></i>Nom : {{ entity.nom }}</li>
+                            <li><i class="ec-mobile"></i>Prénoms : {{ entity.prenoms }}</li>
+                            <li><i class="ec-mobile"></i>Date de naissance : {{ entity.dateNaissance|date('d/m/Y') }}</li>
+                            <li><i class="ec-mobile"></i>Sexe: {{ entity.sexe }}</li>
+                            <li><i class="ec-mobile"></i>Nationalité: {{ entity.nationalite }}</li>
+                            <li><i class="ec-mobile"></i>Profession: {{ entity.profession }}</li>
+                            <li><i class="ec-mobile"></i>Email personnel: {{ entity.emailPerso }}</li>
+                            <li><i class="ec-mobile"></i>Employeur: {{ entity.employeur }}</li>
+                            <li><i class="ec-mobile"></i>Dernier diplome: {{ entity.dernierDiplome }}</li>
+                            <li><i class="ec-mobile"></i>Année d'obtention: {{ entity.anneeObtention }}</li>
+                            <li><i class="ec-mobile"></i>Poste actuel: {{ entity.fonctionActu }}</li>
+                            <li><i class="ec-mobile"></i>Téléphone Mobile: {{ entity.mobile }}</li>
+                            <li><i class="ec-mobile"></i>Téléphone bureau : {{ entity.telephoneBureau }}</li>
+                            <li><i class="ec-mobile"></i>Email professionnel : {{ entity.emailProfessionel }}</li>
+                            <li><i class="ec-mobile"></i>Ville : {{ entity.ville }} </li>
+                            <li><i class="ec-mobile"></i>Type de formation: {{ entity.typeFormation }}</li>
+                            <li><i class="ec-mobile"></i>Période choisie pour la formation: {{ entity.periode }}</li>
+                            <li><i class="ec-mobile"></i>Mode de règlement: {{ entity.methodeReglement }}</li>
+                            <li><i class="ec-mobile"></i>Email personnel: {{ entity.emailPerso }}</li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- End .panel -->
+            </div>
+
+
+        </div>
+
+
+
+    </div>
+{% endblock %}

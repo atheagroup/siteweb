@@ -1,0 +1,134 @@
+<?php
+
+namespace User\UtilisateursBundle\Entity;
+
+use FOS\UserBundle\Model\User as BaseUser;
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * @ORM\Entity
+ * @ORM\Table(name="utilisateurs")
+ */
+class User extends BaseUser
+{
+    /**
+     * @ORM\Id
+     * @ORM\Column(type="integer")
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    protected $id;
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="offre_ag", type="string", length=255)
+     */
+    private $offreAg;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="offre_partenaire", type="string", length=255)
+     */
+    private $offrePartenaire;
+
+    /**
+     * @ORM\OneToMany(targetEntity="Site\FrontendBundle\Entity\Clients", mappedBy="utilisateur")
+     * @ORM\JoinColumn(nullable=true)
+     */
+    private $client;
+
+    public function __construct()
+    {
+        parent::__construct();
+        // your own logic
+    }
+
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Add client
+     *
+     * @param \Site\FrontendBundle\Entity\Clients $client
+     * @return User
+     */
+    public function addClient(\Site\FrontendBundle\Entity\Clients $client)
+    {
+        $this->client[] = $client;
+
+        return $this;
+    }
+
+    /**
+     * Remove client
+     *
+     * @param \Site\FrontendBundle\Entity\Clients $client
+     */
+    public function removeClient(\Site\FrontendBundle\Entity\Clients $client)
+    {
+        $this->client->removeElement($client);
+    }
+
+    /**
+     * Get client
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getClient()
+    {
+        return $this->client;
+    }
+
+    /**
+     * Set offreAg
+     *
+     * @param string $offreAg
+     * @return User
+     */
+    public function setOffreAg($offreAg)
+    {
+        $this->offreAg = $offreAg;
+
+        return $this;
+    }
+
+    /**
+     * Get offreAg
+     *
+     * @return string 
+     */
+    public function getOffreAg()
+    {
+        return $this->offreAg;
+    }
+
+    /**
+     * Set offrePartenaire
+     *
+     * @param string $offrePartenaire
+     * @return User
+     */
+    public function setOffrePartenaire($offrePartenaire)
+    {
+        $this->offrePartenaire = $offrePartenaire;
+
+        return $this;
+    }
+
+    /**
+     * Get offrePartenaire
+     *
+     * @return string 
+     */
+    public function getOffrePartenaire()
+    {
+        return $this->offrePartenaire;
+    }
+}

@@ -1,0 +1,71 @@
+<!-- Fixed navbar -->
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="{{ path('site_frontend_homepage') }}" class="active">Athea Group</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li><a href="#"></a></li>
+                <li><a href="#"></a></li>
+                <li><a href="#"></a></li>
+
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#"></a></li>
+                <li><a href="http://atheagroup.us9.list-manage1.com/subscribe?u=7e7d5a1e8b3dadc0d66e97ee5&id=740df17e17&orig-lang=1" target="blank">
+                      <span class="label label-default">Abonnez-vous à notre newsletters
+                </span></a></li>
+                <li class="active"><a href="#">
+                        <div id="google_translate_element"></div><script type="text/javascript">
+                            function googleTranslateElementInit() {
+                                new google.translate.TranslateElement({pageLanguage: 'fr', includedLanguages: 'ar,de,en,fr,tr,zh-CN', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+                            }
+                        </script><script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+                <span class="sr-only">(current)</span></a></li>
+            </ul>
+        </div><!--/.nav-collapse -->
+    </div>
+</nav>
+
+<div id="top-bar" style="background-color: #ffffff;margin-top:50px;">
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <a class="brand pull-left" href="{{ path('site_frontend_homepage') }}"><img src="{{ asset('img/logo.png') }}" alt="Athea Group" title="Athea Group"></a>
+
+            </div>
+        </div>
+    </div>
+</div>
+<div class="navbar bs-docs-nav" role="banner" style="background-color: #a3d495; color:#000000">
+    <div class="container">
+        <div class="navbar-header">
+            <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+        <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
+            <ul class="nav navbar-nav">
+                <li class=""><a href="{{ path('site_frontend_homepage') }}">Accueil</a></li>
+                <li><a href="{{ path('site_frontend_emploi') }}">Emploi</a></li>
+                <li><a href="{{ path('site_frontend_telecom') }}">Télécom</a></li>
+                <li><a href="{{ path('site_frontend_formation') }}">Formations</a></li>
+                <li><a href="{{ path('site_frontend_materielsMeddicaux') }}">Matériels medicaux</a></li>
+                <li><a href="{{ path('site_frontend_apropos') }}">A propos de nous</a></li>
+                <li><a href="{{ path('site_frontend_galerie') }}">Galerie</a></li>
+                <li><a href="{{ path('site_contact_us_homepage') }}">Contacts</a></li>
+            </ul>
+        </nav>
+    </div>
+</div>

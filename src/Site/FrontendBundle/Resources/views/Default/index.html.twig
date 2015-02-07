@@ -1,0 +1,112 @@
+{% extends "::layout/base.html.twig" %}
+
+{% block titre %} Accueil - {{ parent() }}{% endblock %}
+{% block description %}{{ descriptionAG }}{% endblock %}
+
+{% block slide %}
+    {% include "::modulesUsed/slider.html.twig" %}
+{% endblock %}
+{% block body %}
+            <h3 class="title"><span class="pull-left">Nos differents services</span><span class="pull-right"><a href=""></a></span></h3>
+            <div class="row">
+                <div class="span12 product_listing">
+                    <div id="owl-carousel" class="owl-carousel">
+                        <div class="col-md-12">
+                            <div class="item">
+                                <a href="{{ path('site_frontend_telecom_videoSurveillance') }}"><img class="img" src="{{ asset('img/telecom/vp.jpg') }}" alt="Vidéos Protection" title="Vidéos Protection" style="height: 150px;width:150px;"></a>
+                                <a href="{{ path('site_frontend_telecom_videoSurveillance') }}" class="title">Vidéos Protection</a>
+                                <p></p>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="item">
+                                <a href="{{ path('site_frontend_telecom_telemetrie') }}"><img class="img" src="{{ asset('img/telecom/telemetrie.jpg') }}" alt="Télémétrie" title="Télémétrie" style="height: 150px;width:150px;"></a>
+                                <a href="{{ path('site_frontend_telecom_telemetrie') }}" class="title">Télémétrie</a>
+                                <p></p>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="item">
+                                <a href="{{ path('site_frontend_telecom_pabx') }}"><img class="img" src="{{ asset('img/telecom/pabx.jpg') }}" alt="PABX" title="PABX" style="height: 150px;width:150px;"></a>
+                                <a href="{{ path('site_frontend_telecom_pabx') }}" class="title">PABX</a>
+                                <p></p>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="item">
+                                <a href="{{ path('site_frontend_materielsMeddicaux') }}"><img class="img" src="{{ asset('img/medical/m2.jpg') }}" alt="Matériel Médical" title="Matériel Médical" style="height: 150px;width:150px;"></a>
+                                <a href="{{ path('site_frontend_materielsMeddicaux') }}" class="title">Matériel Médical</a>
+                                <p>
+
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="item">
+                                <a href="{{ path('site_frontend_materielsMeddicaux') }}"><img class="img" src="{{ asset('img/medical/m4.jpg') }}" alt="Maintien à domicile" title="Maintien à domicile" style="height: 150px;width:150px;"></a>
+                                <a href="{{ path('site_frontend_materielsMeddicaux') }}" class="title">Maintien à domicile</a>
+                                <p>.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="item">
+                                <div class="item">
+                                    <a href="{{ path('site_frontend_telecom_pabx') }}"><img class="img" src="{{ asset('img/pg.jpg') }}" alt="Formations" title="Formations"  style="height: 150px;width:150px;"></a>
+                                <a href="{{ path('site_frontend_telecom_pabx') }}" class="title">Formations</a>
+                                    <p></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="item">
+                                <a href="{{ path('site_frontend_materielsMeddicaux') }}"><img class="img" src="{{ asset('img/medical/m1.jpg') }}" alt="Soins Examen" title="Soins Examen" style="height: 150px;width:150px;"></a>
+                                <a href="{{ path('site_frontend_materielsMeddicaux') }}" class="title">Soins Examen</a>
+                                <p></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <h3 class="title"><span class="pull-left">Offres d'emploi et stage à la une</span><span class="pull-right"><a href="{{ path('site_frontend_emploi') }}">Voir tous les offres</a></span></h3>
+        {% if emplois|length !=0 %}
+                      {% for emploi in emplois %}
+                     <div class="listing-item">
+                        <div class="row">
+                            <div class="col-md-7">
+                                <div class="featured-item">
+                                    <span class="label label-success price">Date de publication:</span> {{ emploi.creationDate | date("d/m/Y")}}
+                                    <hr/>
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <a href="{{ path('site_frontend_emploi_details',{'title':emploi.titre,'id': emploi.id,'_format': 'html'}) }}"><img src="{{ asset(emploi.logo.AssetPath) }}" alt="{{ emploi.titre }}" title="{{ emploi.titre }}" class="img pull-left" style="height: 100px;width: 150px;"></a>
+                                            <br/>
+                                            <span class="label label-info price">Like</span>
+                                            <span class="label label-info price">Partager</span>
+                                        </div>
+                                        <div class="col-md-8">
+                                            <h5><a href="{{ path('site_frontend_emploi_details',{'title':emploi.titre ,'id': emploi.id,'_format': 'html'}) }}">{{ emploi.titre }}</a></h5>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-5">
+                                <div class="other_info">
+                                    <span class="label label-danger price">Date limite:</span> {{ emploi.dateLimite | date("d/m/Y")}}
+                                    <hr/>
+                                    <p><strong>Type d'offre :</strong> {{ emploi.typeOffre }}<br/>
+                                        <strong>Lieu:</strong> {{ emploi.ville.nom }}<br/>
+                                    <div class="btn-group">
+                                        <div class='span2'>
+                                            <a href="{{ path('site_frontend_emploi_details',{'title':emploi.titre,'id': emploi.id,'_format': 'html'}) }}" class='btn btn-mini btn-info'>Consulter l'offre</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+        {% else %}
+            <div class="listing-item">Aucune offre disponible pour le moment !</div>
+        {% endif %}
+{% endblock %}

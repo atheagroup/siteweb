@@ -1,0 +1,4 @@
+services:
+#    site_contact_us.example:
+#        class: Site\ContactUSBundle\Example
+#        arguments: [@service_id, "plain_value", %parameter%]

@@ -1,0 +1,37 @@
+<ul class="nav navbar-nav pull-left">
+    <li class="dropdown">
+        <a href="#" data-toggle="dropdown">
+              {% if totalNotif == 0 %}
+
+              {% else %}
+                  <i class="fa-bell"></i><span class="notification">{{ totalNotif }}</span>
+              {% endif %}
+        </a>
+        <ul class="dropdown-menu email" role="menu">
+            <li class="mail-head">
+                <div class="clearfix">
+
+                    <span>Notifications</span>
+
+                </div>
+            </li>
+            {% for clt in clients %}
+                <li class="mail-list clearfix">
+                    <a href="{{ path('adminClients_modificationNotif',{'id' : clt.id}) }}">
+                        <img src="{{ asset('assets/img/avatars/logo.png') }}" class="mail-avatar pull-left" alt="avatar">
+                        <p class="name">
+                            <span class="status"><i class="en-dot"></i></span>
+                            <span class="time">{{ clt.creationDate|date('d/m/Y à H:m:s') }}</span>
+                        </p>
+                        <p class="msg">
+                            {{ clt.nom }} {{ clt.prenoms }}
+                        </p>
+                    </a>
+                </li>
+            {% endfor %}
+            <li class="mail-more">
+                <a href="{{ path('adminClient') }}">Voir tous <i class="en-arrow-right7"></i></a>
+            </li>
+        </ul>
+    </li>
+</ul>

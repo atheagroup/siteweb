@@ -1,0 +1,59 @@
+{% extends "::layout/baseAdmin.html.twig" %}
+
+{% block body %}
+    <!-- Start .content-wrapper -->
+    <div class="content-wrapper">
+        {% block infosBar %}
+            {% include "SiteFrontendBundle:Admin:includes/barinfosGalerie.html.twig" %}
+        {% endblock %}
+    </div>
+
+    <div class="clearfix">
+
+        <h1>Galerie</h1>
+
+        <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                <!-- col-lg-4 start here -->
+                <div class="panel panel-default plain profile-widget">
+                    <!-- Start .panel -->
+                    <div class="panel-heading white-bg pl0 pr0">
+                        <img class="profile-image img-responsive" src="{{ asset(entity.image.AssetPath) }}" alt="profile cover" style="width:500px;height: 315px; ">
+                    </div>
+                    <div class="panel-body">
+                        <div class="col-lg-4 col-md-4 col-sm-12">
+                            <div class="profile-avatar">
+                                <img class="img-responsive" src="{{ asset(entity.image.AssetPath) }}" alt="@roybarberuk">
+                            </div>
+                        </div>
+                        <div class="col-lg-8 col-md-8 col-sm-12">
+                            <div class="profile-name">
+                               {{ entity.nom }}
+                            </div>
+                            <div class="profile-quote">
+                                <p><span class="label label-success">Date de création : {{ entity.dateCreation|date('Y-m-d H:i:s') }}</span></p>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="panel-footer white-bg">
+                        <p>
+                            <a href="{{ path('adminGalerie') }}" class="btn btn-xs btn-info">Retour à la liste</a>
+                            <a href="{{ path('adminGalerie_edit', { 'id': entity.id }) }}" class="btn btn-xs btn-btn btn-xs btn-brown">Editer</a>
+                            <a>{{ form(delete_form) }}</a>
+                        </p>
+                    </div>
+                </div>
+                <!-- End .panel -->
+            </div>
+
+
+        </div>
+
+
+    </div>
+{% endblock %}
+
+
+
+

@@ -1,0 +1,35 @@
+{% extends "::layout/baseAdmin.html.twig" %}
+
+{% block body %}
+    <!-- Start .content-wrapper -->
+    <div class="content-wrapper">
+        {% block infosBar %} {% include "SiteFrontendBundle:Admin:includes/barinfosGalerie.html.twig" %}{% endblock %}
+
+    </div>
+
+    <div class="clearfix">
+        <h1>Edition d'une image</h1>
+
+        <form action="{{ path('adminGalerie_update',{'id' : entity.id }) }}" method="post" {{ form_enctype(edit_form) }} class="form-horizontal group-border hover-stripped" role="form">
+            <div class="form-group">
+                <div class="col-lg-4 col-md-4">
+                    {{ form(edit_form) }}
+                    <br/><br/><br/>
+                    <div class="row-fluid">
+                        <div class="col-lg-4 col-md-3"><input type="submit" class="btn btn-xs btn-btn btn-xs btn-brown" value="Modifier"></div>
+                        <div class="col-lg-4 col-md-4"><a href="{{ path('adminGalerie') }}" class="btn btn-xs btn-info">Retour à la liste</a></div>
+                        <div class="col-lg-4 col-md-5">{{ form(delete_form) }}</div>
+                    </div>
+                </div>
+            </div>
+        </form>
+
+    </div>
+{% endblock %}
+{% block javascripts %}
+    {{ parent() }}
+    <script src="{{ asset('assets/js/pages/forms.js') }}"></script>
+{% endblock %}
+
+
+

@@ -1,0 +1,140 @@
+{% extends "::layout/base.html.twig" %}
+
+{% block titre %} Inscription aux formation - {{ parent() }}{% endblock %}
+
+{% block body %}
+    <h3 class="title"><span class="pull-left">Inscription pour formation</span></h3>
+    {% for flasMessage in app.session.FlashBag.get("success") %}
+        <div class="alert alert-success" style="margin-top: 20px;">{{ flasMessage }}</div>
+    {% endfor %}
+     <form method="post" {{ form_enctype(form) }} action="{{ path('site_frontend_inscription') }}">
+       <div class="form-group" style="margin-top: 30px;">
+         <div class ="row-fluid">
+             <div class="col-lg-6 col-md-6">
+                 {{ form_label(form.nom,"Nom") }}
+                 {{ form_widget(form.nom) }}
+                 {{ form_errors(form.nom) }}
+             </div>
+             <div class="col-lg-6 col-md-6">
+                 {{ form_label(form.prenoms,"Prénoms") }}
+                 {{ form_widget(form.prenoms) }}
+                 {{ form_errors(form.prenoms) }}
+             </div>
+         </div>
+         <div class ="row-fluid">
+             <div class="col-lg-6 col-md-6">
+                 {{ form_label(form.dateNaissance,"Date de naissance") }}
+                 {{ form_widget(form.dateNaissance) }}
+                 {{ form_errors(form.dateNaissance) }}
+             </div>
+             <div class="col-lg-6 col-md-6">
+                 {{ form_label(form.sexe,"Sexe") }}
+                 {{ form_widget(form.sexe) }}
+                 {{ form_errors(form.sexe) }}
+             </div>
+         </div>
+         <div class ="row-fluid">
+             <div class="col-lg-6 col-md-6">
+                 {{ form_label(form.nationalite,"Nationalité") }}
+                 {{ form_widget(form.nationalite) }}
+                 {{ form_errors(form.nationalite) }}
+             </div>
+             <div class="col-lg-6 col-md-6">
+                 {{ form_label(form.profession,"Profession") }}
+                 {{ form_widget(form.profession) }}
+                 {{ form_errors(form.profession) }}
+             </div>
+         </div>
+         <div class ="row-fluid">
+             <div class="col-lg-6 col-md-6">
+                 {{ form_label(form.emailPerso,"Votre email personnel") }}
+                 {{ form_widget(form.emailPerso) }}
+                 {{ form_errors(form.emailPerso) }}
+             </div>
+             <div class="col-lg-6 col-md-6">
+                 {{ form_label(form.employeur,"Votre employeur") }}
+                 {{ form_widget(form.employeur) }}
+                 {{ form_errors(form.employeur) }}
+             </div>
+         </div>
+         <div class ="row-fluid">
+             <div class="col-lg-6 col-md-6">
+                 {{ form_label(form.dernierDiplome,"Votre dernier diplome") }}
+                 {{ form_widget(form.dernierDiplome) }}
+                 {{ form_errors(form.dernierDiplome) }}
+             </div>
+             <div class="col-lg-6 col-md-6">
+                 {{ form_label(form.universiteEcole,"Université / Ecole") }}
+                 {{ form_widget(form.universiteEcole) }}
+                 {{ form_errors(form.universiteEcole) }}
+             </div>
+         </div>
+         <div class ="row-fluid">
+             <div class="col-lg-6 col-md-6">
+                 {{ form_label(form.anneeObtention,"Année d'obtention du diplome") }}
+                 {{ form_widget(form.anneeObtention) }}
+                 {{ form_errors(form.anneeObtention) }}
+             </div>
+             <div class="col-lg-6 col-md-6">
+                 {{ form_label(form.fonctionActu,"Votre Fonction actuelle") }}
+                 {{ form_widget(form.fonctionActu) }}
+                 {{ form_errors(form.fonctionActu) }}
+             </div>
+         </div>
+         <div class ="row-fluid">
+             <div class="col-lg-6 col-md-6">
+                 {{ form_label(form.mobile,"Votre Mobile") }}
+                 {{ form_widget(form.mobile) }}
+                 {{ form_errors(form.mobile) }}
+             </div>
+             <div class="col-lg-6 col-md-6">
+                 {{ form_label(form.telephoneBureau,"Telephone Bureau") }}
+                 {{ form_widget(form.telephoneBureau) }}
+                 {{ form_errors(form.telephoneBureau) }}
+             </div>
+         </div>
+         <div class ="row-fluid">
+             <div class="col-lg-6 col-md-6">
+                 {{ form_label(form.emailProfessionel,"Email professionel") }}
+                 {{ form_widget(form.emailProfessionel) }}
+                 {{ form_errors(form.emailProfessionel) }}
+             </div>
+             <div class="col-lg-6 col-md-6">
+                 {{ form_label(form.paysResidence,"Votre pays de residence") }}
+                 {{ form_widget(form.paysResidence) }}
+                 {{ form_errors(form.paysResidence) }}
+             </div>
+         </div>
+
+         <div class ="row-fluid">
+             <div class="col-lg-6 col-md-6">
+                 {{ form_label(form.ville,"Si vous résidez en Cote d'Ivoire, Veuillez préciser la ville:") }}
+                 {{ form_widget(form.ville) }}
+                 {{ form_errors(form.ville) }}
+             </div>
+             <div class="col-lg-6 col-md-6">
+                 {{ form_label(form.typeFormation,"Type de formation") }}
+                 {{ form_widget(form.typeFormation) }}
+                 {{ form_errors(form.typeFormation) }}
+             </div>
+
+         </div>
+         <div class ="row-fluid">
+             <div class="col-lg-6 col-md-6">
+                 {{ form_label(form.periode,"Periode") }}
+                 {{ form_widget(form.periode) }}
+                 {{ form_errors(form.periode) }}
+             </div>
+             <div class="col-lg-6 col-md-6">
+                 {{ form_label(form.methodeReglement,"Méthode de règlement envisagé :") }}
+                 {{ form_widget(form.methodeReglement) }}
+                 {{ form_errors(form.methodeReglement) }}
+             </div>
+         </div>
+
+           {{ form_rest(form) }}
+           <br/><br/><br/>
+         <div class ="row-fluid"><label style="color:#ffffff;">x</label><input type="submit" class="btn btn-success btn-lg btn-block" value="Inscription" style="margin-top: 50px;"></div>
+       </div>
+     </form>
+{% endblock %}

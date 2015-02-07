@@ -1,0 +1,40 @@
+{% extends "::layout/baseAdmin.html.twig" %}
+
+{% block body %}
+    <!-- Start .content-wrapper -->
+    <div class="content-wrapper">
+        {% block infosBar %} {% include "SiteFrontendBundle:Admin:includes/barinfosPartenaires.html.twig" %}{% endblock %}
+
+    </div>
+
+    <div class="clearfix">
+        <h1>Ajouter un Client</h1>
+
+        <form action="{{ path('adminPartenaires_create') }}" method="post" {{ form_enctype(form) }} class="form-horizontal group-border hover-stripped" role="form">
+            <div class="form-group">
+                <div class="col-lg-4 col-md-4">
+                    {{ form_label(form.nom, "Nom de la société") }}
+                    {{ form_widget(form.nom) }}<br/>
+
+                    {{ form_label(form.lienSiteweb, "Adresse du site web") }}
+                    {{ form_widget(form.lienSiteweb) }}<br/>
+
+                    {{ form_label(form.logo, "Logo de la société") }}
+                    {{ form_widget(form.logo) }}<br/>
+
+                    <div class="row-fluid">
+                        <div class="col-lg-4 col-md-3">{{ form_rest(form) }}</div>
+                        <div class="col-lg-4 col-md-4"><a href="{{ path('adminPartenaires') }}" class="btn btn-xs btn-info">Retour à la liste</a></div>
+                        <div class="col-lg-4 col-md-5">{{ form(form) }}</div>
+                    </div>
+                </div>
+            </div>
+        </form>
+
+    </div>
+{% endblock %}
+{% block javascripts %}
+    {{ parent() }}
+    <script src="{{ asset('assets/js/pages/forms.js') }}"></script>
+{% endblock %}
+

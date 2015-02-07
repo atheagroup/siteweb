@@ -1,0 +1,18 @@
+site_contact_us:
+    resource: "@SiteContactUSBundle/Resources/config/routing.yml"
+    prefix:   /
+
+user_utilisateurs:
+    resource: "@UserUtilisateursBundle/Resources/config/routing.yml"
+    prefix:   /
+
+admin_backend:
+    resource: "@adminBackendBundle/Resources/config/routing.yml"
+    prefix:   /
+
+site_frontend:
+    resource: "@SiteFrontendBundle/Resources/config/routing.yml"
+    prefix:   /
+
+fos_user:
+    resource: "@FOSUserBundle/Resources/config/routing/all.xml"

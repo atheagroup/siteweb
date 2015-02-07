@@ -1,0 +1,42 @@
+{% extends "::layout/baseAdmin.html.twig" %}
+
+{% block body %}
+    <!-- Start .content-wrapper -->
+    <div class="content-wrapper">
+        {% block infosBar %}
+            {% include "SiteFrontendBundle:Admin:includes/barinfosVilles.html.twig" %}
+        {% endblock %}
+    </div>
+
+    <div class="clearfix">
+
+        <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                <!-- col-lg-4 start here -->
+                <div class="panel panel-default plain profile-widget">
+                    <div class="panel-body">
+
+                        <div class="col-lg-8 col-md-8 col-sm-12">
+                            <div class="profile-name">
+                                {{ entity.nom }}
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="panel-footer white-bg">
+                        <div class="row-fluid">
+                            <div class="col-lg-4 col-md-4 col-sm-4 ">{{ form(delete_form) }}</div>
+                            <div class="col-lg-4 col-md-4 col-sm-4"><a href="{{ path('adminVilles') }}" class="btn btn-xs btn-info">Retour à la liste</a></div>
+                            <div class="col-lg-4 col-md-4 col-sm-4"> <a href="{{ path('adminVilles_edit', {'id': entity.id }) }}" class="btn btn-xs btn-btn btn-xs btn-brown">Editer</a></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- End .panel -->
+            </div>
+
+
+        </div>
+
+
+    </div>
+{% endblock %}

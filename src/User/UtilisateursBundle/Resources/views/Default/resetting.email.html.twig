@@ -1,0 +1,18 @@
+{% block subject %}Réinitialisation de votre mot de passe {% endblock %}
+
+{% block body_text %}
+    {% autoescape false %}
+    Bonjour  {{ user.username }} !
+
+    Vous pouvez réinitialiser votre email en accédant {{}} CONFIRMATIONURL
+
+    Coordialement,
+    L'équipe Athea Group
+    {% endautoescape %}
+{% endblock %}
+
+{% block body_html %}
+
+    {% include 'UtilisateursBundle:Default:resetting.email-body_html.html.twig' %}
+
+{% endblock %}

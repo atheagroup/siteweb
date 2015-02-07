@@ -1,0 +1,62 @@
+site_frontend_homepage:
+    path:     /
+    defaults: { _controller: SiteFrontendBundle:Default:index }
+
+site_frontend_apropos:
+    path:     /apropos
+    defaults: { _controller: SiteFrontendBundle:Default:apropos }
+
+site_frontend_emploi:
+    path:     /emplois
+    defaults: { _controller: SiteFrontendBundle:Default:emploi }
+
+site_frontend_emploi_details:
+    path:     /emplois/{title}-{id}.{_format}
+    defaults: { _controller: SiteFrontendBundle:Default:presentationEmploi }
+    requirements:
+        _format: html
+
+site_frontend_telecom:
+    path:     /telecom
+    defaults: { _controller: SiteFrontendBundle:Default:telecom }
+
+site_frontend_telecom_pabx:
+    path:     /telecom/pabx
+    defaults: { _controller: SiteFrontendBundle:Default:pabx }
+
+site_frontend_telecom_videoSurveillance:
+    path:     /telecom/videosurveillance
+    defaults: { _controller: SiteFrontendBundle:Default:videosurveillance }
+
+site_frontend_telecom_telemetrie:
+    path:     /telecom/telemetrie
+    defaults: { _controller: SiteFrontendBundle:Default:telemetrie }
+
+site_frontend_formation:
+    path:     /formations
+    defaults: { _controller: SiteFrontendBundle:Default:formation }
+
+site_frontend_materielsMeddicaux:
+    path:     /materielmedical
+    defaults: { _controller: SiteFrontendBundle:Default:materielmeddical }
+
+site_frontend_galerie:
+    path:     /galerie
+    defaults: { _controller: SiteFrontendBundle:Default:galerie }
+
+site_frontend_galerieImages:
+    path:     /galerie/images
+    defaults: { _controller: SiteFrontendBundle:Default:galerieImage }
+
+site_frontend_galerieVideos:
+    path:     /galerie/videos
+    defaults: { _controller: SiteFrontendBundle:Default:videos }
+
+site_frontend_inscription:
+    path:     /inscription
+    defaults: { _controller: SiteFrontendBundle:Default:inscription }
+
+site_frontend_connexion:
+    path:     /connexion
+    defaults: { _controller: SiteFrontendBundle:Default:connexion }
+

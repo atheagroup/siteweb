@@ -1,0 +1,30 @@
+adminVilles:
+    path:     /
+    defaults: { _controller: "SiteFrontendBundle:VillesAdmin:index" }
+
+adminVilles_show:
+    path:     /{id}/show
+    defaults: { _controller: "SiteFrontendBundle:VillesAdmin:show" }
+
+adminVilles_new:
+    path:     /new
+    defaults: { _controller: "SiteFrontendBundle:VillesAdmin:new" }
+
+adminVilles_create:
+    path:     /create
+    defaults: { _controller: "SiteFrontendBundle:VillesAdmin:create" }
+    requirements: { _method: post }
+
+adminVilles_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "SiteFrontendBundle:VillesAdmin:edit" }
+
+adminVilles_update:
+    path:     /{id}/update
+    defaults: { _controller: "SiteFrontendBundle:VillesAdmin:update" }
+    requirements: { _method: post|put }
+
+adminVilles_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "SiteFrontendBundle:VillesAdmin:delete" }
+    requirements: { _method: post|delete }

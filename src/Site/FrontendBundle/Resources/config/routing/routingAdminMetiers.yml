@@ -1,0 +1,30 @@
+adminMetiers:
+    path:     /
+    defaults: { _controller: "SiteFrontendBundle:MetiersAdmin:index" }
+
+adminMetiers_show:
+    path:     /{id}/show
+    defaults: { _controller: "SiteFrontendBundle:MetiersAdmin:show" }
+
+adminMetiers_new:
+    path:     /new
+    defaults: { _controller: "SiteFrontendBundle:MetiersAdmin:new" }
+
+adminMetiers_create:
+    path:     /create
+    defaults: { _controller: "SiteFrontendBundle:MetiersAdmin:create" }
+    requirements: { _method: post }
+
+adminMetiers_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "SiteFrontendBundle:MetiersAdmin:edit" }
+
+adminMetiers_update:
+    path:     /{id}/update
+    defaults: { _controller: "SiteFrontendBundle:MetiersAdmin:update" }
+    requirements: { _method: post|put }
+
+adminMetiers_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "SiteFrontendBundle:MetiersAdmin:delete" }
+    requirements: { _method: post|delete }

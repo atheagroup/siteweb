@@ -1,0 +1,41 @@
+{% extends "::layout/base.html.twig" %}
+
+{% block titre %} Télémétrie - Télécommunication - {{ parent() }}{% endblock %}
+
+{% block description %}
+
+      La Télémétrie est une technique de gestion à distance. Elle prend en compte le contrôle d’accès, la vidéo surveillance, la mesure en consommation d'énergie et bien d'autres selon le domaine d'application( agricole, médecine, télécoms...)
+
+{% endblock %}
+
+{% block body %}
+
+    <h3 class="title"><span class="pull-left">Télémétrie</span><span class="pull-right"><a href="{{ path('site_frontend_telecom') }}">Télécommunication</a></span></h3>
+            <div class="row">
+
+                <div class="col-md-4">
+                    <a href="{{ asset('img/telecom/telemetrie.jpg') }}" class="thumbnail" data-fancybox-group="group1" title="Télémetrie - Athea Group"><img alt="Télémetrie - Athea Group" src="{{ asset('img/telecom/telemetrie.jpg') }}"></a>
+                    <div class="row">
+                        <ul class="thumbnails small">
+                            <li class="col-md-4">
+                                <a href="{{ asset('img/telecom/telemetrie/telemetrie2.jpg') }}" class="thumbnail" data-fancybox-group="group1" title="Télémetrie - Athea Group"><img src="{{ asset('img/telecom/telemetrie/telemetrie2.jpg') }}" alt="Télémetrie - Athea Group"></a>
+                            </li>
+                            <li class="col-md-4">
+                                <a href="{{ asset('img/telecom/telemetrie/telemetrie3.jpg') }}" class="thumbnail" data-fancybox-group="group1" title="Télémetrie - Athea Group"><img src="{{ asset('img/telecom/telemetrie/telemetrie3.jpg') }}" alt="Télémetrie - Athea Group"></a>
+                            </li>
+                            <li class="col-md-4">
+                                <a href="{{ asset('img/telecom/telemetrie/telemetrie4.jpg') }}" class="thumbnail" data-fancybox-group="group1" title="Télémetrie - Athea Group"><img src="{{ asset('img/telecom/telemetrie/telemetrie4.jpg') }}" alt="Télémetrie - Athea Group"></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-md-8">
+
+                    <h3><span class="success">Description</span></h3>
+                    <p class="leadPerso">
+                        La Télémétrie est une technique de gestion à distance. Elle prend en compte le contrôle d’accès, la vidéo surveillance, la mesure en consommation d'énergie et bien d'autres selon le domaine d'application( agricole, médecine, télécoms...)
+                    </p>
+                </div>
+            </div>
+{% endblock %}

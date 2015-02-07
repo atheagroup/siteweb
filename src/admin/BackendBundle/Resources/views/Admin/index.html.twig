@@ -1,0 +1,11 @@
+{% extends "::layout/baseAdmin.html.twig" %}
+
+{% block body %}
+    <!-- Start .content-wrapper -->
+    <div class="content-wrapper">
+      {% block infosBar %} {% include "::modulesUsed/infos.html.twig" %}{% endblock %}
+      {% render(controller('SiteFrontendBundle:DefaultNotification:notification')) %}
+    </div>
+
+    <div class="clearfix"></div>
+{% endblock %}

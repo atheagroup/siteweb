@@ -1,0 +1,89 @@
+<!-- Start #header -->
+<div id="header">
+<div class="container-fluid">
+<div class="navbar">
+    <div class="navbar-header">
+        <a class="navbar-brand" href="{{ path('admin_backend_homepage') }}">
+            <i class="im-windows8 text-logo-element animated bounceIn"></i><span class="text-logo">A</span><span class="text-slogan">G</span>
+        </a>
+    </div>
+    <nav class="top-nav" role="navigation">
+    {% render(controller("SiteFrontendBundle:Clients:notificationClientsFormation")) %}
+        <ul class="nav navbar-nav pull-right">
+
+
+            <li class="dropdown">
+                <a href="#" data-toggle="dropdown">
+                    <img class="user-avatar" src="{{ asset('assets/img/avatars/logo.png') }}" alt="SuggeElson">Administrateur</a>
+                <ul class="dropdown-menu right" role="menu">
+                    <li><a href="{{ path('fos_user_profile_show') }}"><i class="st-user"></i> Profile</a></li>
+                    <li><a href="{{ path('fos_user_profile_edit') }}"><i class="st-settings"></i> Paramètres</a></li>
+                    <li><a href="{{ path('fos_user_change_password') }}"><i class="st-settings"></i> Changer votre mot de passe</a></li>
+                    <li><a href="{{ path('fos_user_security_logout') }}"><i class="im-exit"></i>Déconnexion</a></li>
+                </ul>
+            </li>
+
+        </ul>
+    </nav>
+</div>
+<!-- Start #header-area -->
+<div id="header-area" class="fadeInDown">
+    <div class="header-area-inner">
+        <ul class="list-unstyled list-inline">
+            <li>
+                <div class="shortcut-button">
+                    <a href="#">
+                        <i class="im-pie"></i>
+                        <span>Earning Stats</span>
+                    </a>
+                </div>
+            </li>
+            <li>
+                <div class="shortcut-button">
+                    <a href="#">
+                        <i class="ec-images color-dark"></i>
+                        <span>Gallery</span>
+                    </a>
+                </div>
+            </li>
+            <li>
+                <div class="shortcut-button">
+                    <a href="#">
+                        <i class="en-light-bulb color-orange"></i>
+                        <span>Fresh ideas</span>
+                    </a>
+                </div>
+            </li>
+            <li>
+                <div class="shortcut-button">
+                    <a href="#">
+                        <i class="ec-link color-blue"></i>
+                        <span>Links</span>
+                    </a>
+                </div>
+            </li>
+            <li>
+                <div class="shortcut-button">
+                    <a href="#">
+                        <i class="ec-support color-red"></i>
+                        <span>Support</span>
+                    </a>
+                </div>
+            </li>
+            <li>
+                <div class="shortcut-button">
+                    <a href="#">
+                        <i class="st-lock color-teal"></i>
+                        <span>Lock area</span>
+                    </a>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+<!-- End #header-area -->
+</div>
+<!-- Start .header-inner -->
+</div>
+<!-- End #header -->
+<!-- Start #sidebar -->

@@ -1,0 +1,39 @@
+{% extends "::layout/baseAdmin.html.twig" %}
+
+{% block body %}
+    <!-- Start .content-wrapper -->
+    <div class="content-wrapper">
+        {% block infosBar %}
+            {% include "SiteFrontendBundle:Admin:includes/barinfosClients.html.twig" %}
+        {% endblock %}
+
+    </div>
+
+    <div class="clearfix">
+
+        <div class="panel panel-default plain toggle panelClose panelRefresh">
+            <!-- Start .panel -->
+            <div class="panel-heading white-bg">
+                <h4 class="panel-title">Data table</h4>
+            </div>
+            <div class="panel-body">
+                <table class="table display" id="datatable">
+                    <thead>
+                    <tr>
+                        <th>Nom d'utilisateur</th>
+                        <th>Email</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for entity in membres %}
+                        <tr>
+                            <td>{{ entity.username }}</td>
+                            <td>{{ entity.email }}</td>
+                        </tr>
+                    {% endfor %}
+                    </tfoot>
+                </table>
+            </div>
+        </div>
+    </div>
+{% endblock %}

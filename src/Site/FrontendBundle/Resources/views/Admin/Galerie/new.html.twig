@@ -1,0 +1,47 @@
+{% extends "::layout/baseAdmin.html.twig" %}
+
+{% block body %}
+    <!-- Start .content-wrapper -->
+    <div class="content-wrapper">
+        {% block infosBar %} {% include "SiteFrontendBundle:Admin:includes/barinfosGalerie.html.twig" %}{% endblock %}
+
+    </div>
+
+    <div class="clearfix">
+        <h1>Créaion d'une galerie</h1>
+
+        <form action="{{ path('adminGalerie_create') }}" method="post" {{ form_enctype(form) }} class="form-horizontal group-border hover-stripped" role="form">
+            {# Les erreurs générales du formulaire. #}
+            {{ form_errors(form) }}
+            <div class="form-group">
+                <div class="col-lg-4 col-md-4">
+                       {# Génération du label. #}
+                        {{ form_label(form.nom, "Nom de l'image") }}
+                        {{ form_errors(form.nom) }}
+                        {# Génération de l'input. #}
+                        {{ form_widget(form.nom) }}
+                        <br/>
+                       {# Génération du label. #}
+                       {{ form_label(form.image, "Choix de l'image") }}
+                       {{ form_errors(form.image) }}
+                       {# Génération de l'input. #}
+                       {{ form_widget(form.image) }}
+                      <br/>
+                      {{ form_rest(form) }}<br/>
+                </div>
+            </div>
+        </form>
+        <br/> <br/>
+        <a href="{{ path('adminGalerie') }}" class="btn btn-xs btn-info">
+            Retour à la liste
+        </a>
+
+    </div>
+{% endblock %}
+{% block javascripts %}
+    {{ parent() }}
+    <script src="{{ asset('assets/js/pages/forms.js') }}"></script>
+{% endblock %}
+
+
+

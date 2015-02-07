@@ -1,0 +1,45 @@
+<div id="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+                <h4 class="">Informations</h4>
+                <ul>
+                    <li class=""><a href="{{ path('site_frontend_homepage') }}">Accueil</a></li>
+                    <li><a href="{{ path('site_frontend_emploi') }}">Emploi</a></li>
+                    <li><a href="{{ path('site_frontend_telecom') }}">Télécom</a></li>
+                    <li><a href="{{ path('site_frontend_formation') }}">Formations</a></li>
+                    <li><a href="{{ path('site_frontend_materielsMeddicaux') }}">Matériels medicaux</a></li>
+                    <li><a href="{{ path('site_frontend_inscription') }}">Inscription</a></li>
+                    <li><a href="{{ path('site_frontend_apropos') }}">A propos de nous</a></li>
+                    <li><a href="{{ path('site_frontend_galerie') }}">Galerie</a></li>
+                    <li><a href="{{ path('site_contact_us_homepage') }}">Contacts</a></li>
+                </ul>
+            </div>
+            <div class="col-md-3">
+                <h4>Compte membre</h4>
+                <ul>
+                    {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                        <li><a href="{{ path('fos_user_security_logout') }}"><i class="glyphicon glyphicon-off"></i> Déconnexion</a></li>
+                    {% else %}
+                        <li><a href="{{ path('fos_user_security_login') }}"><i class="glyphicon glyphicon-user"></i> Se connecter</a></li>
+                        <li><a href="{{ path('fos_user_registration_register') }}"><i class="glyphicon glyphicon-edit"></i> Créer un compte</a></li>
+                    {% endif %}
+
+
+                </ul>
+            </div>
+            <div class="col-md-3">
+                <h4>Suivez-nous sur</h4>
+                <a href="https://www.facebook.com/pages/Athea-Group/427325654087248" target="_blank"><img src="{{ asset('img/social-facebook.png') }}" alt="Facebook" /></a>
+            </div>
+            <div class="col-md-3">
+                <div class="company_info">
+                    <h4>Athea Group Corporation</h4>
+                    <p>
+                        Tel: (+225) 22 50 16 53 / (+225) 08 06 76 41 / (+225) 08 08 89 91
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
