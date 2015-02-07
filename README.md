@@ -1,4 +1,4 @@
-Symfony Standard Edition
+Site Web d'Athea Group Corporation
 ========================
 
 Welcome to the Symfony Standard Edition - a fully-functional Symfony2
